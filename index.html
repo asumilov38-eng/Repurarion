@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Управление репутацией бизнеса</title>
+    <title>Дмитрий — управление репутацией бизнеса</title>
     <meta name="description" content="Работа с отзывами на Яндекс Картах, 2ГИС, Google и других площадках. Повышение рейтинга и доверия к вашему бизнесу.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,29 +200,6 @@
         }
         .nav-link.active::after { display: none; }
 
-        .nav-cta {
-            background: transparent;
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            border: 1.5px solid var(--primary);
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: var(--font);
-            letter-spacing: -0.01em;
-            white-space: nowrap;
-            margin-left: 8px;
-        }
-
-        .nav-cta:hover {
-            background: var(--primary);
-            color: #0b1f17;
-            box-shadow: 0 4px 16px rgba(45, 212, 167, 0.25);
-            transform: translateY(-1px);
-        }
-
         .menu-toggle {
             display: none;
             flex-direction: column;
@@ -267,16 +244,6 @@
         .mobile-nav .nav-link.active {
             background: var(--primary);
             color: #0b1f17;
-        }
-        .mobile-nav .nav-cta {
-            margin-top: 8px;
-            padding: 14px;
-            border-radius: var(--radius-sm);
-            text-align: center;
-            margin-left: 0;
-            background: var(--primary);
-            color: #0b1f17;
-            border: none;
         }
 
         .main {
@@ -695,7 +662,7 @@
         .contact-info > p {
             color: var(--text-secondary);
             margin-bottom: 24px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.7;
             text-align: center;
         }
@@ -710,7 +677,7 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 16px 18px;
+            padding: 12px 14px;
             background: rgba(28, 43, 34, 0.7);
             border-radius: var(--radius-sm);
             cursor: pointer;
@@ -730,17 +697,17 @@
         }
 
         .contact-item .icon {
-            width: 40px;
-            height: 40px;
+            width: 34px;
+            height: 34px;
             background: rgba(22, 32, 26, 0.8);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
             color: var(--primary);
             flex-shrink: 0;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             box-shadow: var(--shadow-sm);
             font-family: var(--font-mono);
             transition: var(--transition);
@@ -750,26 +717,26 @@
             transform: scale(1.05);
         }
         .contact-item .icon svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             stroke: currentColor;
         }
 
         .contact-item .label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-muted);
             font-weight: 500;
         }
 
         .contact-item .value {
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             letter-spacing: -0.01em;
         }
 
         .contact-item .copy-hint {
             margin-left: auto;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
             opacity: 0;
             transition: var(--transition);
@@ -779,6 +746,12 @@
 
         .contact-item:hover .copy-hint {
             opacity: 1;
+        }
+
+        #toggleContactsBtn {
+            display: block;
+            margin: 0 auto 20px;
+            font-size: 0.9rem;
         }
 
         .footer {
@@ -866,8 +839,8 @@
             .stat-number { font-size: 1.1rem; }
             .section-header h2 { font-size: 1.5rem; }
             .cards-grid, .steps { grid-template-columns: 1fr; }
-            .contact-section { padding: 24px; }
-            .contact-item { padding: 12px 14px; }
+            .contact-section { padding: 20px; }
+            .contact-item { padding: 10px 12px; }
             .main { padding: 0 16px 40px; }
             .footer-inner { flex-direction: column; text-align: center; gap: 6px; }
         }
@@ -891,7 +864,6 @@
                     <button class="nav-link" data-page="services" onclick="navigateTo('services')">Услуги</button>
                     <button class="nav-link" data-page="about" onclick="navigateTo('about')">Обо мне</button>
                     <button class="nav-link" data-page="contact" onclick="navigateTo('contact')">Контакты</button>
-                    <button class="nav-cta" onclick="navigateTo('contact')">Обсудить задачу</button>
                 </nav>
                 <button class="menu-toggle" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Меню">
                     <span></span><span></span><span></span>
@@ -902,7 +874,6 @@
                 <button class="nav-link" data-page="services" onclick="navigateTo('services'); closeMobileMenu();">Услуги</button>
                 <button class="nav-link" data-page="about" onclick="navigateTo('about'); closeMobileMenu();">Обо мне</button>
                 <button class="nav-link" data-page="contact" onclick="navigateTo('contact'); closeMobileMenu();">Контакты</button>
-                <button class="nav-cta" onclick="navigateTo('contact'); closeMobileMenu();">Обсудить задачу</button>
             </nav>
         </header>
 
@@ -920,7 +891,7 @@
                         Больше положительных отзывов — выше доверие клиентов — больше обращений.
                     </p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="navigateTo('contact')">Обсудить задачу</button>
+                        <button class="btn btn-primary" onclick="navigateTo('contact')">Связаться со мной</button>
                         <button class="btn btn-secondary" onclick="navigateTo('services')">Узнать об услугах</button>
                     </div>
                     <div class="hero-stats">
@@ -1136,49 +1107,52 @@
                     <div class="contact-section animate-on-scroll">
                         <div class="contact-info">
                             <h2>Контакты</h2>
-                            <p>Нажмите на номер, чтобы скопировать его. Почта откроет почтовый клиент, Telegram — чат.</p>
-                            <div class="contact-list">
-                                <div class="contact-item" data-copy="+79600980288" onclick="copyPhone(this)">
-                                    <div class="icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                        </svg>
+                            <button class="btn btn-primary" id="toggleContactsBtn" onclick="toggleContacts()">Показать контакты</button>
+                            <div id="contactsWrapper" style="display: none;">
+                                <p>Нажмите на номер, чтобы скопировать его. Почта откроет почтовый клиент, Telegram — чат.</p>
+                                <div class="contact-list">
+                                    <div class="contact-item" data-copy="+79600980288" onclick="copyPhone(this)">
+                                        <div class="icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="label">Телефон</div>
+                                            <div class="value">+7 960 098-02-88</div>
+                                        </div>
+                                        <span class="copy-hint">Скопировать</span>
                                     </div>
-                                    <div>
-                                        <div class="label">Телефон</div>
-                                        <div class="value">+7 960 098-02-88</div>
+
+                                    <div class="contact-item" data-copy="+79600980288" onclick="copyPhone(this)">
+                                        <div class="icon">M</div>
+                                        <div>
+                                            <div class="label">Max</div>
+                                            <div class="value">+7 960 098-02-88</div>
+                                        </div>
+                                        <span class="copy-hint">Скопировать</span>
                                     </div>
-                                    <span class="copy-hint">Скопировать</span>
+
+                                    <a class="contact-item" href="https://t.me/+79600980288" target="_blank" rel="noopener">
+                                        <div class="icon">TG</div>
+                                        <div>
+                                            <div class="label">Telegram</div>
+                                            <div class="value">@+79600980288</div>
+                                        </div>
+                                        <span class="copy-hint">Открыть чат</span>
+                                    </a>
+
+                                    <a class="contact-item" href="mailto:dmitrivladimirov1336@gmail.com">
+                                        <div class="icon">@</div>
+                                        <div>
+                                            <div class="label">Email</div>
+                                            <div class="value">dmitrivladimirov1336@gmail.com</div>
+                                        </div>
+                                        <span class="copy-hint">Открыть почту</span>
+                                    </a>
                                 </div>
-
-                                <div class="contact-item" data-copy="+79600980288" onclick="copyPhone(this)">
-                                    <div class="icon">M</div>
-                                    <div>
-                                        <div class="label">Max</div>
-                                        <div class="value">+7 960 098-02-88</div>
-                                    </div>
-                                    <span class="copy-hint">Скопировать</span>
-                                </div>
-
-                                <a class="contact-item" href="https://t.me/+79600980288" target="_blank" rel="noopener">
-                                    <div class="icon">TG</div>
-                                    <div>
-                                        <div class="label">Telegram</div>
-                                        <div class="value">@+79600980288</div>
-                                    </div>
-                                    <span class="copy-hint">Открыть чат</span>
-                                </a>
-
-                                <a class="contact-item" href="mailto:dmitrivladimirov1336@gmail.com">
-                                    <div class="icon">@</div>
-                                    <div>
-                                        <div class="label">Email</div>
-                                        <div class="value">dmitrivladimirov1336@gmail.com</div>
-                                    </div>
-                                    <span class="copy-hint">Открыть почту</span>
-                                </a>
                             </div>
-                            <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                            <p style="margin-top: 20px; font-size: 0.75rem; color: var(--text-muted); text-align: center;">
                                 Работаю с проектами любого масштаба. Стоимость зависит от объёма и количества площадок.
                             </p>
                         </div>
@@ -1245,6 +1219,18 @@
         function closeMobileMenu() {
             document.getElementById('mobileNav').classList.remove('open');
             document.getElementById('menuToggle').style.transform = 'rotate(0deg)';
+        }
+
+        function toggleContacts() {
+            const wrapper = document.getElementById('contactsWrapper');
+            const btn = document.getElementById('toggleContactsBtn');
+            if (wrapper.style.display === 'none') {
+                wrapper.style.display = 'block';
+                btn.style.display = 'none';
+            } else {
+                wrapper.style.display = 'none';
+                btn.style.display = 'block';
+            }
         }
 
         function copyPhone(element) {
