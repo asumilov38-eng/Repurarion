@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -150,7 +149,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 72px;
+            height: 80px;
             gap: 16px;
             position: relative;
         }
@@ -515,15 +514,15 @@
         }
 
         .card-icon {
-            width: 44px;
-            height: 44px;
+            width: 28px;
+            height: 28px;
             background: var(--primary-soft);
-            border-radius: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--primary);
             font-weight: 700;
             transition: var(--transition);
@@ -717,11 +716,6 @@
             background: #0b1f17;
             transform: scale(1.05);
         }
-        .contact-item .icon svg {
-            width: 18px;
-            height: 18px;
-            stroke: currentColor;
-        }
 
         .contact-item .label {
             font-size: 0.7rem;
@@ -827,9 +821,12 @@
         }
 
         @media (max-width: 768px) {
-            .header-inner { justify-content: center; padding: 0 8px; }
+            .header-inner {
+                justify-content: flex-start;
+                padding: 0 8px;
+            }
             .nav { display: none; }
-            .menu-toggle { display: flex; }
+            .menu-toggle { display: flex; position: static; }
             .mobile-nav { display: none; }
             .mobile-nav.open { display: flex; }
             .hero { padding: 40px 0 20px; }
@@ -844,11 +841,6 @@
             .contact-item { padding: 10px 12px; }
             .main { padding: 0 16px 40px; }
             .footer-inner { flex-direction: column; text-align: center; gap: 6px; }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.7rem; }
-            .btn { padding: 12px 20px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -879,7 +871,6 @@
         </header>
 
         <main class="main" id="mainContent">
-            <!-- HOME -->
             <section class="page active" id="page-home">
                 <div class="hero animate-on-scroll">
                     <div class="hero-badge">
@@ -986,7 +977,6 @@
                 </div>
             </section>
 
-            <!-- SERVICES -->
             <section class="page" id="page-services">
                 <div class="section" style="padding-top: 40px;">
                     <div class="section-header animate-on-scroll">
@@ -1032,7 +1022,6 @@
                 </div>
             </section>
 
-            <!-- ABOUT -->
             <section class="page" id="page-about">
                 <div class="section" style="padding-top: 40px;">
                     <div class="section-header animate-on-scroll">
@@ -1097,7 +1086,6 @@
                 </div>
             </section>
 
-            <!-- CONTACT -->
             <section class="page" id="page-contact">
                 <div class="section" style="padding-top: 40px;">
                     <div class="section-header animate-on-scroll">
@@ -1110,31 +1098,31 @@
                             <h2>Контакты</h2>
                             <button class="btn btn-primary" id="toggleContactsBtn" onclick="toggleContacts()">Показать контакты</button>
                             <div id="contactsWrapper" style="display: none;">
-                                <p>Нажмите на номер, чтобы скопировать его. Почта откроет почтовый клиент, Telegram — чат.</p>
+                                <p>Нажмите на кнопку, чтобы перейти в мессенджер или открыть почту.</p>
                                 <div class="contact-list">
-                                    <a class="contact-item" href="https://t.me/xDeathHyp3r" target="_blank" rel="noopener">
+                                    <a class="contact-item" href="https://t.me/xDeathFo" target="_blank" rel="noopener">
                                         <div class="icon">TG</div>
                                         <div>
                                             <div class="label">Telegram</div>
                                             <div class="value">Перейти в Telegram</div>
                                         </div>
-                                        <span class="copy-hint">Открыть чат</span>
+                                        <span class="copy-hint">Открыть</span>
                                     </a>
 
-                                    <div class="contact-item" data-copy="+79600980288" onclick="copyPhone(this)">
+                                    <a class="contact-item" href="https://max.ru/u/f9LHodD0cOJWU7FBAr_s-pweJNmpdr82nvdD-kXo5V5XkNZX4yoXGd08Hjk" target="_blank" rel="noopener">
                                         <div class="icon">M</div>
                                         <div>
                                             <div class="label">Max</div>
-                                            <div class="value">+7 960 098-02-88</div>
+                                            <div class="value">Перейти в Max</div>
                                         </div>
-                                        <span class="copy-hint">Скопировать</span>
-                                    </div>
+                                        <span class="copy-hint">Открыть</span>
+                                    </a>
 
-                                    <a class="contact-item" href="mailto:dmitrivladimirov1336@gmail.com">
+                                    <a class="contact-item" href="mailto:medvedkovvmichael@yandex.ru">
                                         <div class="icon">@</div>
                                         <div>
                                             <div class="label">Email</div>
-                                            <div class="value">dmitrivladimirov1336@gmail.com</div>
+                                            <div class="value">Написать на почту</div>
                                         </div>
                                         <span class="copy-hint">Открыть почту</span>
                                     </a>
@@ -1221,22 +1209,6 @@
             }
         }
 
-        function copyPhone(element) {
-            const number = element.getAttribute('data-copy');
-            if (!number) return;
-            navigator.clipboard.writeText(number).then(() => {
-                showToast('Скопировано: ' + number);
-            }).catch(() => {
-                const textarea = document.createElement('textarea');
-                textarea.value = number;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showToast('Скопировано: ' + number);
-            });
-        }
-
         function showToast(message) {
             const toast = document.getElementById('toast');
             toast.textContent = message;
@@ -1289,4 +1261,3 @@
     </script>
 </body>
 </html>
-```
